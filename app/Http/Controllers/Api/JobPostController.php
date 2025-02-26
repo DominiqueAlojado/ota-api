@@ -79,7 +79,7 @@ class JobPostController extends Controller
         }
     }
 
-    public function store(Request $request)
+    public function store(Request $request): JsonResponse
     {
         try {
             $validatedData = $request->validate([
@@ -125,7 +125,7 @@ class JobPostController extends Controller
         }
     }
 
-    public function firstTimeJobPosterChecker(object $dataset)
+    public function firstTimeJobPosterChecker(object $dataset): void
     {
         $moderatorEmail = env('MODERATOR_EMAIL');
         try {
